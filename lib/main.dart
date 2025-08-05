@@ -5,10 +5,7 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: GradientContainer(
-          text: "Hello World from Flutter from the other side",
-          colors: [Colors.red, Colors.yellow, Colors.green],
-        ),
+        body: GradientContainer.reyelgre(),
       )
     ),
   );

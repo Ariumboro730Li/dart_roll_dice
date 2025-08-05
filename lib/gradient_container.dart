@@ -21,15 +21,19 @@ const endAlignment = Alignment.bottomCenter;
 
 // This is the main application widget.
 class GradientContainer extends StatelessWidget {
+
   // GradientContainer({key}): super(key: key);  
   const GradientContainer({
     super.key, 
     required this.colors,
-    required this.text
+    // required this.text
   }); 
 
-  final String text;
+  const GradientContainer.reyelgre({super.key})
+      : colors = const [Color.fromARGB(255, 54, 244, 238), Color.fromARGB(255, 255, 59, 163), Color.fromARGB(255, 86, 159, 89)];
+
   final List<Color> colors;
+  // final String text;
 
   @override
   /// Builds a Container widget with a gradient background
@@ -58,7 +62,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: StyledText(text, 90),
+        child: StyledText("text", 90),
       ),
     );
   }
