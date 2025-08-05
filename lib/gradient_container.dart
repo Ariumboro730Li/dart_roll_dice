@@ -22,7 +22,15 @@ const endAlignment = Alignment.bottomCenter;
 // This is the main application widget.
 class GradientContainer extends StatelessWidget {
   // GradientContainer({key}): super(key: key);  
-  const GradientContainer({super.key});
+  const GradientContainer({
+    super.key, 
+    required this.colors,
+    required this.text
+  }); 
+
+  final String text;
+  final List<Color> colors;
+
   @override
   /// Builds a Container widget with a gradient background
   /// that transitions from red, to yellow, to green.
@@ -43,13 +51,14 @@ class GradientContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.red, Colors.yellow, Colors.green],
+          // colors: [Colors.red, Colors.yellow, Colors.green],
+          colors: colors,
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
       child: Center(
-        child: StyledText('Hello World from Flutter Yuhuyy'),
+        child: StyledText(text, 90),
       ),
     );
   }
