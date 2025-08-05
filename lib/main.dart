@@ -5,8 +5,15 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: GradientContainer.reyelgre(),
+        body: GradientContainer(
+          colors: const [
+            Color.fromARGB(255, 255, 0, 0),
+            Color.fromARGB(255, 255, 255, 0),
+            Color.fromARGB(255, 0, 255, 0),
+          ],
+        ),
       )
     ),
   );
 }
+  
