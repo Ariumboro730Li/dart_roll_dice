@@ -15,9 +15,7 @@ class StyledText extends StatelessWidget {
       style: TextStyle(
         fontSize: sizeFont,
         color: Colors.black87,
-        fontFamily: "Times New Roman",
         fontWeight: FontWeight.bold,
-        fontStyle: FontStyle.italic,
       ),
       textAlign: TextAlign.center,
     );

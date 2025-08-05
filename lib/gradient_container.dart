@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:roll_dice_app/styled_text.dart';
+import 'package:roll_dice_app/dice_roller.dart';
+
 
 // The start and end of the gradient are specified as Alignment objects.
 // The variables are mutable so that they can be changed at runtime.
@@ -18,22 +19,22 @@ import 'package:roll_dice_app/styled_text.dart';
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomCenter;
 
-
 // This is the main application widget.
 class GradientContainer extends StatelessWidget {
+  final List<Color> colors;
 
-  // GradientContainer({key}): super(key: key);  
+  // GradientContainer({key}): super(key: key);
   const GradientContainer({
-    super.key, 
+    super.key,
     required this.colors,
-    // required this.text
-  }); 
+  });
 
   const GradientContainer.reyelgre({super.key})
-      : colors = const [Color.fromARGB(255, 54, 244, 238), Color.fromARGB(255, 255, 59, 163), Color.fromARGB(255, 86, 159, 89)];
-
-  final List<Color> colors;
-  // final String text;
+    : colors = const [
+        Color.fromARGB(255, 54, 244, 238),
+        Color.fromARGB(255, 255, 59, 163),
+        Color.fromARGB(255, 86, 159, 89),
+      ];
 
   @override
   /// Builds a Container widget with a gradient background
@@ -55,14 +56,13 @@ class GradientContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          // colors: [Colors.red, Colors.yellow, Colors.green],
           colors: colors,
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
       child: Center(
-        child: StyledText("text", 90),
+        child: DiceRoller(),
       ),
     );
   }
